@@ -8,9 +8,6 @@ public class DialogDisplay : MonoBehaviour {
 	private int currentDialog;
 	private int currentBranch;
 	public bool isTalking;
-	public GUIText answer1;
-	public GUIText answer2;
-	public GUIText answer3;
 	public GameObject guiRoot;
 	public DynamicButton answerPrefab;
 
@@ -58,7 +55,7 @@ public class DialogDisplay : MonoBehaviour {
 			if(dialog.responses.Count > 0)
 			{
 				waitAnswer = true;
-				for (int i = 1; i < dialog.responses.Count; i++)
+				for (int i = 2; i < dialog.responses.Count; i++)
 				{
 					MethodeDePaul(((string)dialog.responses[i]), currentBranch+i+1, i);
 				}
