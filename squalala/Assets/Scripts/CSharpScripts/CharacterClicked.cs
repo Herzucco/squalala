@@ -9,6 +9,7 @@ public class CharacterClicked : MonoBehaviour {
 	public GUIText answers3;
 	public DialogEvent jeanEvent;
 	public CharacterLink link;
+	public GameObject face1;
 
 	private int dialPosition;
 	bool dialLoaded;
@@ -78,10 +79,10 @@ public class CharacterClicked : MonoBehaviour {
 
 	void OnMouseEnter(){
 		//save the original material color
-		this.transform.renderer.material.color = Color.cyan;
+		face1.GetComponent<SpriteRenderer>().color = Color.cyan;
 	}
 
 	void OnMouseExit(){
-		this.transform.renderer.material.color = Color.white;
+		face1.GetComponent<SpriteRenderer>().color = Color.white;
 	}
 }
