@@ -8,7 +8,6 @@ public class CharacterClicked : MonoBehaviour {
 	public DialogEvent jeanEvent;
 	public CharacterLink link;
 	public DialogDisplay dialScript;
-	public GameObject face1;
 
 	public int dialPosition;
 	public bool dialLoaded;
