@@ -26,6 +26,7 @@ public class PointAndClickRaycast : MonoBehaviour {
 					CharacterClicked character = hit.transform.gameObject.GetComponent<CharacterClicked>();
 					character.displayTheDial = true;
 					character.jeanEvent.Action();
+					character.dialScript.talkTo();
 				}
 				if(Input.GetMouseButtonDown(1)){
 					CharacterClicked character = hit.transform.gameObject.GetComponent<CharacterClicked>();
