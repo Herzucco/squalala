@@ -22,11 +22,11 @@ public class PointAndClickRaycast : MonoBehaviour {
 		{
 			if (hit.transform.gameObject.tag == "Character")
 			{
-				hit.transform.renderer.material.color = Color.cyan;
 				if(Input.GetMouseButtonDown(0)){
 					CharacterClicked character = hit.transform.gameObject.GetComponent<CharacterClicked>();
 					character.displayTheDial = true;
 					character.jeanEvent.Action();
+					character.dialScript.talkTo();
 				}
 				if(Input.GetMouseButtonDown(1)){
 					CharacterClicked character = hit.transform.gameObject.GetComponent<CharacterClicked>();
