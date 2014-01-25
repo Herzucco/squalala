@@ -6,7 +6,6 @@ public class Inventory : MonoBehaviour {
 	public string objectEquiped;
 	public PlayerRaycast TriggerInventory;
 	public GameObject Hands;
-	public Vector3 ThrowVector;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +17,7 @@ public class Inventory : MonoBehaviour {
 		if (TriggerInventory != null && TriggerInventory.HitedGameObject() != null && objectEquiped == TriggerInventory.HitedObject())
 		{
 			TriggerInventory.HitedGameObject().transform.position = Hands.transform.position;
-			TriggerInventory.HitedGameObject().GetComponent<BoxCollider>().enabled = false;
+			//TriggerInventory.HitedGameObject().GetComponent<BoxCollider>().enabled = false;
 			if(Input.GetButton("Throw"))
 			{
 				ThrowObject();
@@ -28,8 +27,8 @@ public class Inventory : MonoBehaviour {
 
 	void ThrowObject()
 	{
-		TriggerInventory.HitedGameObject().GetComponent<BoxCollider>().enabled = true;
-		TriggerInventory.HitedGameObject().rigidbody.AddForce(-50, 100, 500);
+		//TriggerInventory.HitedGameObject().GetComponent<BoxCollider>().enabled = true;
+		TriggerInventory.HitedGameObject().rigidbody.velocity = Hands.transform.forward*10;
 		objectEquiped = "";
 	}
 
