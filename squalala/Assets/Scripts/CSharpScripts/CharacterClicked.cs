@@ -9,6 +9,7 @@ public class CharacterClicked : MonoBehaviour {
 	public GUIText answers3;
 	public DialogEvent jeanEvent;
 	public CharacterLink link;
+	public GameObject face1;
 
 	public int dialPosition;
 	public bool dialLoaded;
@@ -67,5 +68,5 @@ public class CharacterClicked : MonoBehaviour {
 
 	void FixedUpdate(){
 		transform.renderer.material.color = Color.white;
-	}
+	}			
 }
