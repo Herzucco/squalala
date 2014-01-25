@@ -1,16 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Dialog : MonoBehaviour {
+public class Dialog {
 
 	public string sentence;
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public string name;
+	public ArrayList responses;
+
+	public Dialog(){
+		responses = new ArrayList();
 	}
 }
