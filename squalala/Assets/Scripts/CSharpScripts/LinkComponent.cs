@@ -18,7 +18,7 @@ public class LinkComponent : MonoBehaviour {
 	public void SendToOtherWorld(){
 		this.DeleteAction();
 		this.target.SetActive(true);
-		this.targetLink.AppearAction();
+		//this.targetLink.AppearAction();
 		this.gameObject.SetActive(false);
 	}
 	public void DeleteAction(){

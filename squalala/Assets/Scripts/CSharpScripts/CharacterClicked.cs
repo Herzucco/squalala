@@ -7,6 +7,8 @@ public class CharacterClicked : MonoBehaviour {
 	public GUIText answers1;
 	public GUIText answers2;
 	public GUIText answers3;
+	public DialogEvent jeanEvent;
+	public CharacterLink link;
 
 	private int dialPosition;
 	bool dialLoaded;
@@ -37,6 +39,11 @@ public class CharacterClicked : MonoBehaviour {
 	void OnMouseOver(){
 			if(Input.GetMouseButtonDown(0)){
 				displayTheDial = true;
+				jeanEvent.Action();
+			}
+			if(Input.GetMouseButtonDown(1)){
+				displayTheDial = false;
+				link.SendToOtherWorld();
 			}
 	}
 
