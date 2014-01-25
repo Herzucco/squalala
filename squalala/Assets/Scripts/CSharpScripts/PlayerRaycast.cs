@@ -37,7 +37,6 @@ public class PlayerRaycast : MonoBehaviour {
 				if(Input.GetButton("Kill")){
 					hit.transform.gameObject.GetComponent<ObjectLink>().SendToOtherWorld();
 				}
-				hit.transform.renderer.material.color = Color.cyan;
 			}
 			//Debug.Log("There is something in front of the object!");
 		}

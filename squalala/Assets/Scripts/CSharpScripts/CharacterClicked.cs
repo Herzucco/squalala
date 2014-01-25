@@ -67,6 +67,6 @@ public class CharacterClicked : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		transform.renderer.material.color = Color.white;
+		//transform.renderer.material.color = Color.white;
 	}			
 }
