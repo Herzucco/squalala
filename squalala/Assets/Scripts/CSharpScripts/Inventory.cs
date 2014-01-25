@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (objectEquiped == TriggerInventory.HitedObject())
+		if (TriggerInventory != null && TriggerInventory.HitedGameObject() != null && objectEquiped == TriggerInventory.HitedObject())
 		{
 			TriggerInventory.HitedGameObject().transform.position = Hands.transform.position;
 			TriggerInventory.HitedGameObject().GetComponent<BoxCollider>().enabled = false;
