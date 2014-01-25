@@ -1,13 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CSharpScripts\CharacterClicked.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CSharpScripts/LinkComponent.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" Line="35" Column="1" />
-      <File FileName="Assets\Scripts\CSharpScripts\CharacterClicked.cs" Line="12" Column="96" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CSharpScripts\ObjectMover.cs">
-    <Files>
-      <File FileName="Assets\Scripts\CSharpScripts\ObjectMover.cs" Line="11" Column="17" />
-      <File FileName="Assets\Scripts\CSharpScripts\TriggerMove.cs" Line="22" Column="2" />
+      <File FileName="Assets/Scripts/CSharpScripts/LinkComponent.cs" Line="21" Column="34" />
+      <File FileName="Assets/Scripts/CSharpScripts/CharacterLink.cs" Line="8" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
