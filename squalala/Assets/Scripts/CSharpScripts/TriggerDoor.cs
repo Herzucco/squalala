@@ -18,7 +18,8 @@ public class TriggerDoor : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.GetComponent<Inventory>().objectEquiped == neededObject)
+		Inventory inventory = other.GetComponent<Inventory>();
+		if (inventory != null && inventory.objectEquiped == neededObject)
 		{
 			Destroy(Parent);
 		}
