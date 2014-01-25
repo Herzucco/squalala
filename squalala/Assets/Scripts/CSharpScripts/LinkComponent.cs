@@ -5,8 +5,10 @@ public class LinkComponent : MonoBehaviour {
 	public GameObject target;
 
 	private LinkComponent targetLink;
+	private Transform basePosition;
 	// Use this for initialization
 	void Start () {
+		this.basePosition = target.transform;
 		this.targetLink = target.gameObject.GetComponent<LinkComponent>();
 	}
 	
@@ -18,6 +20,7 @@ public class LinkComponent : MonoBehaviour {
 	public void SendToOtherWorld(){
 		this.DeleteAction();
 		this.target.SetActive(true);
+		//this.target.transform.position = this.basePosition.position;
 		//this.targetLink.AppearAction();
 		this.gameObject.SetActive(false);
 	}

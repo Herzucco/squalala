@@ -11,9 +11,9 @@ public class CharacterClicked : MonoBehaviour {
 	public CharacterLink link;
 	public GameObject face1;
 
-	private int dialPosition;
-	bool dialLoaded;
-	bool displayTheDial;
+	public int dialPosition;
+	public bool dialLoaded;
+	public bool displayTheDial;
 
 	public ArrayList dialogueOfTheCharacter;
 	public ArrayList answerToTheCharacter;
@@ -36,16 +36,6 @@ public class CharacterClicked : MonoBehaviour {
 			answerToTheCharacter.Add(ans);	
 		}
 		file.Close();
-	}
-	void OnMouseOver(){
-			if(Input.GetMouseButtonDown(0)){
-				displayTheDial = true;
-				jeanEvent.Action();
-			}
-			if(Input.GetMouseButtonDown(1)){
-				displayTheDial = false;
-				link.SendToOtherWorld();
-			}
 	}
 
 	void Update(){
@@ -74,15 +64,9 @@ public class CharacterClicked : MonoBehaviour {
 				dialogueSys.text ="";
 			}
 		}
+	}
+
+	void FixedUpdate(){
+		transform.renderer.material.color = Color.white;
 	}			
-
-
-	void OnMouseEnter(){
-		//save the original material color
-		face1.GetComponent<SpriteRenderer>().color = Color.cyan;
-	}
-
-	void OnMouseExit(){
-		face1.GetComponent<SpriteRenderer>().color = Color.white;
-	}
 }
