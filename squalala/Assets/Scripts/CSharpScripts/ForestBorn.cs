@@ -12,7 +12,7 @@ public class ForestBorn : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other) {
-		if(other.tag == "Plant")
+		if(other.gameObject.name == "Seed")
 		{
 			iTween.MoveBy(forestToMove, iTween.Hash("y", 5, "easeType", "easeInOutExpo", "delay", 0, "time", 3));
 			iTween.MoveBy(bridge, iTween.Hash("z", -18, "easeType", "easeInOutExpo", "delay", 0, "time", 3));
