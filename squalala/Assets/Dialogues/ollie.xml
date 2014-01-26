@@ -1,0 +1,36 @@
+<dialog>
+    <name text='Ollie'></name>
+    <sentence text='I love to feel me raising'></sentence>
+    <dialog>
+        <name text='Ollie'></name>
+        <sentence text='Do you like highness ?'></sentence>
+        <dialog text='Highness ?'>
+            <name text='Ollie'></name>
+            <sentence text='Yes. When you see people'></sentence>
+            <dialog>
+                <name text='Ollie'></name>
+                <sentence text="who can't see themselves."></sentence>
+                <dialog>
+                    <name text='Ollie'></name>
+                    <sentence text="I'm so tired."></sentence>
+                    <dialog>
+                        <name text='Ollie'></name>
+                        <sentence text="Goodbye."></sentence>
+                    </dialog>
+                </dialog>
+            </dialog>
+        </dialog>
+        <dialog text='Highness is why I live for.'>
+            <name text='Ollie'></name>
+            <sentence text="I don't believe you."></sentence>
+            <dialog>
+                    <name text='Ollie'></name>
+                    <sentence text="I'm so tired."></sentence>
+                    <dialog>
+                        <name text='Ollie'></name>
+                        <sentence text="Goodbye."></sentence>
+                    </dialog>
+            </dialog>
+        </dialog>
+    </dialog>
+</dialog>

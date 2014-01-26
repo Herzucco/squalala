@@ -1,0 +1,20 @@
+<dialog>
+    <name text='Alex'></name>
+    <sentence text='Why are you looking at me ?'></sentence>
+    <dialog text="Because of your shoes.">
+        <name text='Alex'></name>
+        <sentence text='Oh.'></sentence>
+        <dialog>
+            <name text='Alex'></name>
+            <sentence text="YOU'LL NEVER"></sentence>
+            <dialog>
+                <name text='Alex'></name>
+                <sentence text="STEAL THEM !"></sentence>
+            </dialog>
+        </dialog>
+    </dialog>
+    <dialog text="I'm not, big eye.">
+        <name text='Alex'></name>
+        <sentence text='Well'></sentence>
+    </dialog>
+</dialog>
