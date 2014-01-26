@@ -14,7 +14,6 @@ public class FranDialogEvent : DialogEvent {
 	}
 
 	public override void End(){
-		pont1.SetActive(false);
-		pont2.SetActive(false);
+
 	}
 }
