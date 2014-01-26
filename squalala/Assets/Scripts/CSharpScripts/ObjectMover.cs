@@ -19,10 +19,11 @@ public class ObjectMover : MonoBehaviour {
 
 	public void moveObject()
 	{
-		iTween.MoveTo(this.gameObject, desiredPosition, floatTime);
+		iTween.MoveTo(this.gameObject, iTween.Hash("position", desiredPosition, "easeType", "linear", "time", floatTime ));
 	}
 
 	public void Reset(){
-		iTween.MoveTo(this.gameObject, basePosition, floatTime);
+		iTween.MoveTo(this.gameObject, iTween.Hash("position", basePosition, "easeType", "linear","time", floatTime ));
+
 	}
 }
