@@ -4,8 +4,7 @@ using System.Collections;
 public class CharacterClicked : MonoBehaviour {
 	
 	public GUIText dialogueSys;
-	
-	public DialogEvent jeanEvent;
+
 	public CharacterLink link;
 	public DialogDisplay dialScript;
 

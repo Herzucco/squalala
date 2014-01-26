@@ -25,13 +25,14 @@ public class PointAndClickRaycast : MonoBehaviour {
 				if(Input.GetMouseButtonDown(0)){
 					CharacterClicked character = hit.transform.gameObject.GetComponent<CharacterClicked>();
 					character.displayTheDial = true;
-					character.jeanEvent.Action();
-					character.dialScript.talkTo();
+					character.dialScript.gameObject.SetActive(true);
+					character.dialScript.Active();
 				}
 				if(Input.GetMouseButtonDown(1)){
 					CharacterClicked character = hit.transform.gameObject.GetComponent<CharacterClicked>();
 					character.displayTheDial = false;
 					character.link.SendToOtherWorld();
+					character.dialScript.EndDialog();
 				}
 			}
 			//Debug.Log("There is something in front of the object!");

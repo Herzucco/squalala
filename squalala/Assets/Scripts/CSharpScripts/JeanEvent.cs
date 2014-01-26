@@ -16,4 +16,7 @@ public class JeanEvent : DialogEvent {
 	public override void Action(){
 		objectMover.moveObject();
 	}
+	public override void End(){
+
+	}
 }
