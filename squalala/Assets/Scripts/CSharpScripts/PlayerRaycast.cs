@@ -10,6 +10,8 @@ public class PlayerRaycast : MonoBehaviour {
 	private GameObject hitGameObject;
 	public Component[] allMesh;
 	public GameObject allLevel;
+	public AudioSource grab;
+	public AudioSource kill;
 
 
 	// Use this for initialization
@@ -33,9 +35,11 @@ public class PlayerRaycast : MonoBehaviour {
 					hitGameObject = hit.transform.gameObject;
 					HitedObject();
 					HitedGameObject();
+					grab.Play();
 				}
 				if(Input.GetButton("Kill")){
 					hit.transform.gameObject.GetComponent<ObjectLink>().SendToOtherWorld();
+					kill.Play();
 				}
 			}
 			//Debug.Log("There is something in front of the object!");

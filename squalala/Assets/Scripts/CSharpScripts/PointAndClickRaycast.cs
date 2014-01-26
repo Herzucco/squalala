@@ -7,7 +7,7 @@ public class PointAndClickRaycast : MonoBehaviour {
 	public float rayDistance;
 	public bool talking;
 	public Camera vuefps;
-
+	public AudioSource kill;
 	// Use this for initialization
 	void Start () {
 		talking = false;
@@ -37,6 +37,7 @@ public class PointAndClickRaycast : MonoBehaviour {
 					character.displayTheDial = false;
 					character.link.SendToOtherWorld();
 					character.dialScript.EndDialog();
+					kill.Play();
 				}
 			}
 			//Debug.Log("There is something in front of the object!");
