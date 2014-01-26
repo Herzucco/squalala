@@ -5,6 +5,7 @@ public class DialogDisplay : MonoBehaviour {
 	public XMLDialogParser dialogParser;
 	public UILabel sentence;
 	public DialogEvent eventToTrigger;
+	public PointAndClickRaycast raycaster;
 
 	private int currentDialog;
 	private int currentBranch;
@@ -36,8 +37,7 @@ public class DialogDisplay : MonoBehaviour {
 		if (waitAnswer) return;
 		ArrayList branch =  (ArrayList)dialogParser.branchs[currentBranch];
 		Dialog dialog;
-		if(Input.GetKeyDown("space"))
-		{
+		if(Input.GetMouseButtonDown(0)){
 			if (currentDialog == branch.Count-1){
 				dialog = (Dialog) branch[currentDialog];
 				if(dialog.responses.Count <= 0){
@@ -45,7 +45,7 @@ public class DialogDisplay : MonoBehaviour {
 					return;
 				}
 			}
-			currentDialog += 1;
+			currentDialog += 1;	
 		}
 
 		if (currentDialog >= branch.Count)
@@ -104,6 +104,7 @@ public class DialogDisplay : MonoBehaviour {
 		currentDialog = 0;
 		this.gameObject.SetActive(false);
 		eventToTrigger.End();
+		raycaster.talking = false;
 	}
 
 	public void Active(){
@@ -113,6 +114,7 @@ public class DialogDisplay : MonoBehaviour {
 		mouseX.enabled = false;
 		mouseY.enabled = false;
 		eventToTrigger.Action();
+		raycaster.talking = true;
 	}
 
 
