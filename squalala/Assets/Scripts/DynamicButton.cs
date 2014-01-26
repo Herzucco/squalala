@@ -10,9 +10,12 @@ public class DynamicButton : MonoBehaviour
 
 	void Start()
 	{
+		Active();
+	}
+
+	public void Active(){
 		GetComponent<UIButtonMessage>().target = receiver;
 		GetComponent<UIButtonMessage>().functionName = message;
 		GetComponentInChildren<UILabel>().text = label;
 	}
-
 }

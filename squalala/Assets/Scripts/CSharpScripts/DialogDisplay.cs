@@ -3,70 +3,117 @@ using System.Collections;
 
 public class DialogDisplay : MonoBehaviour {
 	public XMLDialogParser dialogParser;
-	public GUIText sentence;
+	public UILabel sentence;
+	public DialogEvent eventToTrigger;
 
 	private int currentDialog;
 	private int currentBranch;
-	public bool isTalking;
-	public GUIText answer1;
-	public GUIText answer2;
-	public GUIText answer3;
 	public GameObject guiRoot;
-	public DynamicButton answerPrefab;
-
+	public DynamicButton answerOne;
+	public DynamicButton answerTwo;
+	public MouseLook mouseX;
+	public MouseLook mouseY;
 	// Use this for initialization
 	void Start () {
-		currentBranch = 0;
-		currentDialog = 0;
+		Active();
 	}
-	
-	public void talkTo() {
-		isTalking = true;
- 	}
+
 	// Update is called once per frame
 
-	void MethodeDePaul(string dial, int currentBranch, int indexInScreen) 
-	{
-		DynamicButton b = Instantiate(answerPrefab, Vector3.zero, Quaternion.identity) as DynamicButton;
-		b.transform.parent = guiRoot.transform;
-		b.transform.localScale = Vector3.one;
-		b.receiver = this.gameObject;
-		b.label = dial;
-		b.transform.localPosition = new Vector3(0, indexInScreen * 35, 0);
-	}
+//	void GenerateResponses(string dial, int currentBranch, int indexInScreen) 
+//	{
+//		DynamicButton b = Instantiate(answerPrefab, Vector3.zero, Quaternion.identity) as DynamicButton;
+//		b.transform.parent = guiRoot.transform;
+//		b.transform.localScale = Vector3.one;
+//		b.receiver = this.gameObject;
+//		b.label = dial;
+//		b.transform.localPosition = new Vector3(0, indexInScreen * 35, 0);
+//	}
 
 	bool waitAnswer = false;
 
 	void Update () {
-		//if(isTalking == true)
+		if (waitAnswer) return;
+		ArrayList branch =  (ArrayList)dialogParser.branchs[currentBranch];
+		Dialog dialog;
+		if(Input.GetKeyDown("space"))
 		{
-			if (waitAnswer) return;
-			if(Input.GetKeyDown("space"))
-			{
-				currentDialog += 1;
-			}
-
-			ArrayList branch = (ArrayList)dialogParser.branchs[currentBranch];
-			if (currentDialog >= branch.Count)
-				return;// fin du dialogue
-
-			Dialog dialog = (Dialog) branch[currentDialog];
-
-			sentence.text = dialog.name + " : " + dialog.sentence;
-
-
-			if(dialog.responses.Count > 0)
-			{
-				waitAnswer = true;
-				for (int i = 1; i < dialog.responses.Count; i++)
-				{
-					MethodeDePaul(((string)dialog.responses[i]), currentBranch+i+1, i);
+			if (currentDialog == branch.Count-1){
+				dialog = (Dialog) branch[currentDialog];
+				if(dialog.responses.Count <= 0){
+					EndDialog();
+					return;
 				}
 			}
+			currentDialog += 1;
+		}
+
+		if (currentDialog >= branch.Count)
+			return;// fin du dialogue
+
+		dialog = (Dialog) branch[currentDialog];
+		sentence.text = dialog.name + " : " + dialog.sentence;
+
+
+		if(dialog.responses.Count > 0)
+		{
+			waitAnswer = true;
+
+			answerOne.gameObject.SetActive(true);
+			answerOne.label = (string)dialog.responses[0];
+			answerOne.receiver = this.gameObject;
+			answerOne.message = "UpOneBranch";
+			answerOne.Active();
+
+			answerTwo.gameObject.SetActive(true);
+			answerTwo.label = (string)dialog.responses[1];
+			answerTwo.receiver = this.gameObject;
+			answerTwo.message = "UpTwoBranch";
+			answerTwo.Active();
+		}
+		else if(currentDialog >= branch.Count){
+			EndDialog();
 		}
 	}
 
+	public void UpOneBranch(){
+		currentBranch += 1;
+		currentDialog = 0;
+		waitAnswer = false;
+		answerOne.label = "";
+		answerTwo.label = "";
+		answerOne.gameObject.SetActive(false);
+		answerTwo.gameObject.SetActive(false);
+	}
 
+	public void UpTwoBranch(){
+		currentBranch += 2;
+		currentDialog = 0;
+		waitAnswer = false;
+		answerOne.label = "";
+		answerTwo.label = "";
+		answerTwo.gameObject.SetActive(false);
+		answerOne.gameObject.SetActive(false);
+	}
+
+	public void EndDialog(){
+		sentence.gameObject.SetActive(false);
+		mouseX.enabled = true;
+		mouseY.enabled = true;
+		currentBranch = 0;
+		currentDialog = 0;
+		this.gameObject.SetActive(false);
+		eventToTrigger.End();
+	}
+
+	public void Active(){
+		currentBranch = 0;
+		currentDialog = 0;
+		sentence.gameObject.SetActive(true);
+		mouseX.enabled = false;
+		mouseY.enabled = false;
+		eventToTrigger.Action();
+	}
 
 
 }

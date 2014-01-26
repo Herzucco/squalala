@@ -16,4 +16,8 @@ public class DialogEvent : MonoBehaviour {
 	public virtual void Action(){
 
 	}
+
+	public virtual void End(){
+		
+	}
 }

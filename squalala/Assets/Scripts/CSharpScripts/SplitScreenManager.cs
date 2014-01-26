@@ -10,7 +10,7 @@ public class SplitScreenManager : MonoBehaviour {
 	private float speed;
 	// Use this for initialization
 	void Start () {
-
+		//this.MoveToIn(0.3f, -0.1f);
 	}
 	
 	// Update is called once per frame

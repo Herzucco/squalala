@@ -1,0 +1,16 @@
+<dialog>
+    <name text='jean'></name>
+    <sentence text='bonjour'></sentence>
+    <dialog>
+        <name text='jean'></name>
+        <sentence text='Ca va bien ?'></sentence>
+        <dialog text='1.Oui'>
+            <name text='jean'></name>
+            <sentence text='Cool'></sentence>
+        </dialog>
+        <dialog text='2.Non'>
+            <name text='jean'></name>
+            <sentence text='Ow'></sentence>
+        </dialog>
+    </dialog>
+</dialog>
