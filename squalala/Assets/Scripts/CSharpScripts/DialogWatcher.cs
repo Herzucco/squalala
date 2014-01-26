@@ -17,6 +17,8 @@ public class DialogWatcher : MonoBehaviour {
 	}
 
 	protected void CheckSentence(string text){
+		if(this.wantedDialog == "Mono : Good"){
+		}
 		if(!realized && text == this.wantedDialog){
 			realized = true;
 			Action();

@@ -1,0 +1,36 @@
+<dialog>
+    <name text='Mono'></name>
+    <sentence text='I feel under the weather...'></sentence>
+    <dialog>
+        <name text='Mono'></name>
+        <sentence text='I feel like, rainy.'></sentence>
+        <dialog text='Rain is ok, I guess ?'>
+            <name text='Mono'></name>
+            <sentence text='Good.'></sentence>
+        </dialog>
+        <dialog text='What are you talking about ?'>
+            <name text='Mono'></name>
+            <sentence text="What about snow ?"></sentence>
+            <dialog text="SNOWBALLS ! YAY !">
+                    <name text='Mono'></name>
+                    <sentence text="Enjoy."></sentence>
+            </dialog>
+            <dialog text="What's wrong with you ?">
+                    <name text='Mono'></name>
+                    <sentence text="Rude. I'll wash your mouth"></sentence>
+                    <dialog>
+                        <name text='Mono'></name>
+                        <sentence text="with Soap."></sentence>
+                        <dialog text="BUBBLES ! YAY !">
+                            <name text='Mono'></name>
+                            <sentence text="My pleasure."></sentence>
+                        </dialog>
+                        <dialog text="Whatever, weirdo...">
+                            <name text='Mono'></name>
+                            <sentence text="Hmmm..."></sentence>
+                        </dialog>
+                    </dialog>
+            </dialog>
+        </dialog>
+    </dialog>
+</dialog>

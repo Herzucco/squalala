@@ -1,0 +1,28 @@
+<dialog>
+    <name text='Ash'></name>
+    <sentence text='Live fast !'></sentence>
+    <dialog text="Way to go !">
+        <name text="Ash"></name>
+        <sentence text="Yeah, that's my philosophy."></sentence>
+        <dialog>
+            <name text="Ash"></name>
+            <sentence text="What's yours ?"></sentence>
+            <dialog text="Sleep all day, party all night.">
+                <name text="Ash"></name>
+                <sentence text="Great ! You found your passion !"></sentence>
+            </dialog>
+            <dialog text="Rock climbing for life !">
+                <name text="Ash"></name>
+                <sentence text="Great ! You found your passion !"></sentence>
+            </dialog>
+        </dialog>
+    </dialog>
+    <dialog text="Die young !">
+        <name text="Ash"></name>
+        <sentence text="Are you threatening me ?"></sentence>
+        <dialog>
+            <name text="Ash"></name>
+            <sentence text="Bye."></sentence>
+        </dialog>
+    </dialog>
+</dialog>

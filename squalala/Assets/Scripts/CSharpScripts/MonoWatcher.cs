@@ -9,8 +9,8 @@ public class MonoWatcher : DialogWatcher {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update(){
+		CheckSentence(dialoger.sentence.text);
 	}
 
 	public override void Action(){
