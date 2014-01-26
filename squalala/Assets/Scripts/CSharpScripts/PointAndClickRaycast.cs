@@ -6,6 +6,7 @@ public class PointAndClickRaycast : MonoBehaviour {
 	public Ray ray;
 	public float rayDistance;
 	public bool talking;
+	public Camera vuefps;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,7 @@ public class PointAndClickRaycast : MonoBehaviour {
 			if (!talking && hit.transform.gameObject.tag == "Character")
 			{
 				if(Input.GetMouseButtonDown(0)){
+					vuefps.transform.Rotate(new Vector3(-vuefps.transform.eulerAngles.x,0,0));
 					CharacterClicked character = hit.transform.gameObject.GetComponent<CharacterClicked>();
 					character.displayTheDial = true;
 					character.dialScript.gameObject.SetActive(true);
