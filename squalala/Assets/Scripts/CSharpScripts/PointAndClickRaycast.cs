@@ -6,6 +6,7 @@ public class PointAndClickRaycast : MonoBehaviour {
 	public Ray ray;
 	public float rayDistance;
 	public bool talking;
+	public AudioSource kill;
 	// Use this for initialization
 	void Start () {
 		talking = false;
@@ -34,6 +35,7 @@ public class PointAndClickRaycast : MonoBehaviour {
 					character.displayTheDial = false;
 					character.link.SendToOtherWorld();
 					character.dialScript.EndDialog();
+					kill.Play();
 				}
 			}
 			//Debug.Log("There is something in front of the object!");

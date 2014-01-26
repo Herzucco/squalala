@@ -4,19 +4,31 @@ using System.Collections;
 public class SplitScreenManager : MonoBehaviour {
 	public Camera leftCamera;
 	public Camera rightCamera;
+	private bool fading;
+
+	public AudioSource jazz;
+	public AudioSource piano;
 	
 	private bool moving;
 	private float screenPosition;
 	private float speed;
 	// Use this for initialization
 	void Start () {
-		//this.MoveToIn(1f, 0.1f);
+		fading = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(this.moving){
 			this.Move();
+		}
+		if(!this.fading){
+			this.piano.volume = leftCamera.rect.width;
+			this.jazz.volume = rightCamera.rect.width;
+		}
+
+		if(this.fading){
+			fadeIn();
 		}
 	}
 
@@ -58,6 +70,15 @@ public class SplitScreenManager : MonoBehaviour {
 				this.moving = false;
 				return;
 			}
+		}
+	}
+
+	void fadeIn(){
+		piano.volume+=0.001f;
+		jazz.volume+=0.001f;
+		Debug.Log (jazz.volume);
+		if(piano.volume >= 0.5){
+			fading = false;
 		}
 	}
 }
