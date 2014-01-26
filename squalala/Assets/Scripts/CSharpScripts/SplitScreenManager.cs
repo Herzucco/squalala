@@ -26,8 +26,7 @@ public class SplitScreenManager : MonoBehaviour {
 			this.piano.volume = leftCamera.rect.width;
 			this.jazz.volume = rightCamera.rect.width;
 		}
-
-		if(this.fading){
+		else{
 			fadeIn();
 		}
 	}
