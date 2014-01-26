@@ -13,7 +13,7 @@ public class XMLDialogParser : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		xmlDoc = new XmlDocument();
-		System.IO.StreamReader file = new System.IO.StreamReader("Assets/Dialogues/" + filePath +".xml");
+		System.IO.StreamReader file = new System.IO.StreamReader(Application.streamingAssetsPath + "/" + filePath +".xml");
 		xmlDoc.LoadXml(file.ReadToEnd());
 		branchs = new ArrayList();
 		branchs.Add(new ArrayList());

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class JeanEvent : DialogEvent {
-	public ObjectMover objectMover;
+public class MonoEvent : DialogEvent {
+	public GameObject player;
 	// Use this for initialization
 	void Start () {
 	
@@ -14,9 +14,9 @@ public class JeanEvent : DialogEvent {
 	}
 
 	public override void Action(){
-		objectMover.moveObject();
+		player.BroadcastMessage("boostSpeed");
 	}
 	public override void End(){
-		objectMover.Reset();
+		player.BroadcastMessage("resetSpeed");
 	}
 }

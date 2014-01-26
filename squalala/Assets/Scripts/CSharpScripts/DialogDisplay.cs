@@ -63,14 +63,15 @@ public class DialogDisplay : MonoBehaviour {
 			answerOne.label = (string)dialog.responses[0];
 			answerOne.receiver = this.gameObject;
 			answerOne.message = "UpOneBranch";
+			answerOne.Active();
 
 			answerTwo.gameObject.SetActive(true);
 			answerTwo.label = (string)dialog.responses[1];
 			answerTwo.receiver = this.gameObject;
 			answerTwo.message = "UpTwoBranch";
+			answerTwo.Active();
 		}
 		else if(currentDialog >= branch.Count){
-			Debug.Log("yolo");
 			EndDialog();
 		}
 	}
@@ -79,6 +80,8 @@ public class DialogDisplay : MonoBehaviour {
 		currentBranch += 1;
 		currentDialog = 0;
 		waitAnswer = false;
+		answerOne.label = "";
+		answerTwo.label = "";
 		answerOne.gameObject.SetActive(false);
 		answerTwo.gameObject.SetActive(false);
 	}
@@ -87,6 +90,8 @@ public class DialogDisplay : MonoBehaviour {
 		currentBranch += 2;
 		currentDialog = 0;
 		waitAnswer = false;
+		answerOne.label = "";
+		answerTwo.label = "";
 		answerTwo.gameObject.SetActive(false);
 		answerOne.gameObject.SetActive(false);
 	}

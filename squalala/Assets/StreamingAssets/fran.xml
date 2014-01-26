@@ -1,0 +1,24 @@
+<dialog>
+    <name text='Fran'></name>
+    <sentence text='This is so loooooong.'></sentence>
+    <dialog>
+        <name text='Fran'></name>
+        <sentence text='Do you want to play with me ?'></sentence>
+        <dialog text="I don't play with gray people.">
+            <name text='Fran'></name>
+            <sentence text="But I'm red too."></sentence>
+            <dialog>
+                <name text='Fran'></name>
+                <sentence text="I don't like you."></sentence>
+            </dialog>
+        </dialog>
+        <dialog text='Sure.'>
+            <name text='Fran'></name>
+            <sentence text="Wow, such a player !"></sentence>
+            <dialog>
+                    <name text='Fran'></name>
+                    <sentence text="I like you"></sentence>
+            </dialog>
+        </dialog>
+    </dialog>
+</dialog>
