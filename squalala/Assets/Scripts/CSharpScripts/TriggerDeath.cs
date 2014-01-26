@@ -4,26 +4,30 @@ using System.Collections;
 public class TriggerDeath : MonoBehaviour {
 
 	public string levelName;
+	public GameObject FPSCamera;
+	public GameObject PointAndClickCamera;
+	public GameObject GameOverCamera;
+	public float duration;
 	
 	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Player")
+		if (other.tag == "Player" || other.tag == "Object")
 		{
-			Application.LoadLevel(levelName);
-		}
-		if (other.tag == "Object")
-		{
-			Application.LoadLevel(levelName);
+			FPSCamera.active = false;
+			PointAndClickCamera.active = false;
+			GameOverCamera.active = true;
+			StartCoroutine(TimerSpawn1());
 		}
 	}
+	
+		IEnumerator TimerSpawn1()
+		{
+			yield return new WaitForSeconds(duration);
+			Application.LoadLevel(levelName);
+		}
 }
