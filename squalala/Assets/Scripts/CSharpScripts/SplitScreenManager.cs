@@ -76,7 +76,6 @@ public class SplitScreenManager : MonoBehaviour {
 	void fadeIn(){
 		piano.volume+=0.001f;
 		jazz.volume+=0.001f;
-		Debug.Log (jazz.volume);
 		if(piano.volume >= 0.5){
 			fading = false;
 		}
