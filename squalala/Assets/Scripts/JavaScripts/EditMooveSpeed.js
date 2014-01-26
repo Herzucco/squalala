@@ -17,7 +17,8 @@ function Update () {
 
 }
 
-public function boostSpeed() {
+public function boostSpeed() 
+{       Debug.Log('boost');
 	motor.movement.maxForwardSpeed = speed;
 	motor.movement.maxSidewaysSpeed = speed;
 	motor.movement.maxBackwardsSpeed = speed;

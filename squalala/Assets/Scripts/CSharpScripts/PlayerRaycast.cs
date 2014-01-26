@@ -40,14 +40,6 @@ public class PlayerRaycast : MonoBehaviour {
 			}
 			//Debug.Log("There is something in front of the object!");
 		}
-		else
-		{
-			allMesh = allLevel.GetComponentsInChildren<MeshRenderer>();
-			foreach (MeshRenderer meshrenderer in allMesh)
-			{
-				meshrenderer.material.color = Color.white;
-			}
-		}
 
 	}
 
