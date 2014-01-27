@@ -16,7 +16,7 @@ public class TriggerDeath : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Player" || other.tag == "Object")
+		if (other.gameObject.name != "Seed" && (other.tag == "Player" || other.tag == "Object"))
 		{
 			FPSCamera.active = false;
 			PointAndClickCamera.active = false;
